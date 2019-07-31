@@ -9,6 +9,10 @@ class Employee
     @role     = attributes[:role]
   end
 
+  def name
+    @username
+  end
+
   def manager?
     role == 'manager'
   end

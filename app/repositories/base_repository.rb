@@ -4,6 +4,7 @@ require 'csv'
 
 class BaseRepository
   def initialize(csv_path)
+    @element_class = Object.const_get(self.class.name.gsub(/Repository$/, ''))
     @csv_path = csv_path
     @elements = []
     @next_id  = 1
